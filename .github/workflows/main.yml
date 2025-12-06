@@ -44,15 +44,8 @@ jobs:
             type=ref,event=pr
             type=semver,pattern={{raw}}
       -
-        name: Run Buildx for amd64, armv7, arm64 architectures
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
-          # push: ${{ github.event_name != 'pull_request' }}
-          push: false
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+        name: Run docker build
+        run: docker build --tag ${DOCKERHUB_REPOSITORY} .
       -
         name: Show docker images
         run: docker images
