@@ -12,7 +12,7 @@ ENTRYPOINT ["/socks5"]
 FROM alpine/curl:8.8.0 AS curl
 COPY --from=distroless /socks5 /bin
 
-ENV PROXY_PORT 1080
+ENV PROXY_PORT=1080
 
 # Expressions don't expand in single quotes, use double quotes for that.
 # hadolint ignore=SC2016
