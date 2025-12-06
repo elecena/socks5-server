@@ -1,6 +1,6 @@
 name: "Latest tag from master branch"
 env:
-  DOCKERHUB_REPOSITORY: elecena/socks5-server
+  DOCKERHUB_REPOSITORY: ghcr.io/elecena/socks5-server:latest
 
 on:
   pull_request:
@@ -49,7 +49,8 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm/v7,linux/arm64
-          push: ${{ github.event_name != 'pull_request' }}
+          # push: ${{ github.event_name != 'pull_request' }}
+          push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       -
