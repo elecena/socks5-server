@@ -1,6 +1,6 @@
 name: "Latest tag from master branch"
 env:
-  DOCKERHUB_REPOSITORY: serjs/go-socks5-proxy
+  DOCKERHUB_REPOSITORY: elecena/socks5-server
 
 on:
   pull_request:
