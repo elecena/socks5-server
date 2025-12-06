@@ -48,10 +48,10 @@ jobs:
         name: Start and use the container
         run: |
           set -x
-          docker run -e PROXY_USER -e PROXY_PASSWORD -d --name socks5 ${DOCKERHUB_REPOSITORY}
+          docker run -e PROXY_USER -e PROXY_PASSWORD -d --name=socks5 --rm --publish=31080:1080  ${DOCKERHUB_REPOSITORY}
           sleep 3
           docker ps
-          curl --ipv4 --proxy socks5://${PROXY_USER}:${PROXY_PASSWORD}@0.0.0.0:1080 -vI -H "user-agent: socks5/healthcheck" http://example.com/
+          curl --ipv4 --proxy "socks5://${PROXY_USER}:${PROXY_PASSWORD}@0.0.0.0:31080" -vI -H "user-agent: socks5/healthcheck" http://example.com/
       -
         name: Print logs
         if: always()
