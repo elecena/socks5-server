@@ -9,7 +9,7 @@ COPY --from=builder /go/src/github.com/serjs/socks5/socks5 /
 ENTRYPOINT ["/socks5"]
 
 # https://hub.docker.com/r/alpine/curl/tags
-FROM alpine/curl:8.14.1 AS curl
+FROM alpine/curl:8.17.0 AS curl
 COPY --from=distroless /socks5 /bin
 
 ENV PROXY_PORT=1080
