@@ -1,4 +1,4 @@
-FROM golang:1.25-alpine AS builder
+FROM golang:1.26-alpine AS builder
 RUN apk --no-cache add tzdata
 WORKDIR /go/src/github.com/serjs/socks5
 COPY . .
