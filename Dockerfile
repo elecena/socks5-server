@@ -1,4 +1,4 @@
-FROM golang:1.26-alpine AS builder
+FROM golang:1.27-alpine AS builder
 RUN apk --no-cache add tzdata
 WORKDIR /go/src/github.com/serjs/socks5
 COPY . .
@@ -9,7 +9,7 @@ COPY --from=builder /go/src/github.com/serjs/socks5/socks5 /
 ENTRYPOINT ["/socks5"]
 
 # https://hub.docker.com/r/alpine/curl/tags
-FROM alpine/curl:8.21.0 AS curl
+FROM alpine/curl:8.22.0 AS curl
 COPY --from=distroless /socks5 /bin
 
 ENV PROXY_PORT=1080
