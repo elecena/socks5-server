@@ -19,9 +19,10 @@ ENV PROXY_PORT=1080
 RUN echo 'curl -ipv4 --proxy socks5://${PROXY_USER}:${PROXY_PASSWORD}@0.0.0.0:${PROXY_PORT} -vI -H "user-agent: socks5/healthcheck" http://example.com/' > /healthcheck.sh \
         && chown nobody /healthcheck.sh \
         && chmod 744 /healthcheck.sh
-HEALTHCHECK CMD /healthcheck.sh
+HEALTHCHECK CMD ["/healthcheck.sh"]
 
-USER nobody
+# switch to nobody
+USER 65534
 
 EXPOSE 1080
 ENTRYPOINT ["/bin/socks5"]
