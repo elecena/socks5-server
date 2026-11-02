@@ -2,5 +2,5 @@ github.com/caarlos0/env/v6 v6.10.1 h1:t1mPSxNpei6M5yAeu1qtRdPAK29Nbcf/n3G7x+b3/I
 github.com/caarlos0/env/v6 v6.10.1/go.mod h1:hvp/ryKXKipEkcuYjs9mI4bBCg+UI0Yhgm5Zu0ddvwc=
 github.com/serjs/go-socks5 v0.0.0-20250923183437-3920b97ee0d2 h1:dIXY/Lrkd1rGXcN60Fc0M2x0p5/C2XcbBbtPCvVvAa4=
 github.com/serjs/go-socks5 v0.0.0-20250923183437-3920b97ee0d2/go.mod h1:N2PhU16m3olAb71DduLys4mYR3oQboD4uLJmSXCSuMA=
-golang.org/x/net v0.61.0 h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=
-golang.org/x/net v0.61.0/go.mod h1:WgDCOTH8iwtB66T4/GfI94AHo/hhdb7Hah9NDseQfiI=
+golang.org/x/net v0.62.0 h1:18ELalfM5+XNRwzM2nYqXsZQ9ByS1uhj2O/U7+5jqRY=
+golang.org/x/net v0.62.0/go.mod h1:WgDCOTH8iwtB66T4/GfI94AHo/hhdb7Hah9NDseQfiI=
